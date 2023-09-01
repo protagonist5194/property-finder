@@ -1,0 +1,15 @@
+<main role="main">      
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-4"><%= @post.title %></h1>
+      <p class="text-muted pl-2"><em>posted<%= time_ago_in_words @post.created_at %></em></p>
+    </div>
+  </div>
+</main>
+
+<div class="container">
+  <%= simple_format @post.body %>
+</div>
+
+<p><%= link_to "view all latest blog post", blog_path %></p>
+</div>

@@ -1,0 +1,53 @@
+
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :url, style: "display: block" %>
+    <%= form.text_field :url, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :summary, style: "display: block" %>
+    <%= form.text_field :summary, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :body, style: "display: block" %>
+    <%= form.text_area :body, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :image %>
+    <%= form.file_field :image, class: "form-control" %>
+    <%= form.hidden_field :image_cache %>
+
+    <% if @post.image.present? %>
+      <%= image_tag @post.image.thumb.url, class: "m-4" %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :active, style: "display: block" %>
+    <%= form.check_box :active %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+
+#notification {
+    display: none;
+}
+
+
+.img-circle {
+    border-radius: 42%;
+}
+
+#home-banner .jumbotron {
+    background: image-jpg("banners/home.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+#blog-banner .jumbotron {
+    background: image-jpg("banners/blog.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.main-banner .jumbotron{
+    h1, p {
+        color: hsl(241, 88%, 38%);
+        text-shadow: 1px 1px 2px #777;
+    }
+
+}
